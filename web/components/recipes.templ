@@ -546,7 +546,7 @@ templ addRecipeManual(data *templates.ViewRecipeData) {
 										</label>
 									</div>
 								</div>
-								<div class="grid grid-flow-col col-span-6 border-gray-700 border-y md:row-span-2">
+								<div class="hidden grid grid-flow-col col-span-6 border-gray-700 border-y md:row-span-2">
 									<table class="table table-zebra table-xs">
 										<thead>
 											<tr>
@@ -1533,7 +1533,7 @@ templ editRecipe(data *templates.ViewRecipeData) {
 										</label>
 									</div>
 								</div>
-								<div class="grid grid-flow-col col-span-6 border-gray-700 border-y md:row-span-2">
+								<div class="hidden grid grid-flow-col col-span-6 border-gray-700 border-y md:row-span-2">
 									<table class="table table-zebra table-xs">
 										<thead>
 											<tr>
@@ -2323,7 +2323,7 @@ templ viewRecipe(data *templates.ViewRecipeData, isAuthenticated bool) {
 									<time datetime={ data.FormattedTimes.TotalDateTime }>{ data.FormattedTimes.Total }</time>
 								</div>
 							</div>
-							<div class={ "grid grid-flow-col border-gray-700 border-y col-span-6 md:border-t-0 md:row-span-2 print:border-none", templ.KV("print:hidden", data.Recipe.Nutrition.Equal(models.Nutrition{})) }>
+							<div class={ "hidden grid grid-flow-col border-gray-700 border-y col-span-6 md:border-t-0 md:row-span-2 print:border-none", templ.KV("print:hidden", data.Recipe.Nutrition.Equal(models.Nutrition{})) }>
 								<table class="table table-zebra table-xs print:hidden">
 									<thead>
 										<tr>
