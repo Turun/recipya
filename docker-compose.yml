@@ -1,0 +1,31 @@
+version: "3.5"
+
+# Documentation for the environment variables: https://recipes.musicavis.ca/docs/installation/docker/#environment-variables
+services:
+  web:
+    build: "./"
+    container_name: recipya
+    restart: unless-stopped
+    environment:
+      RECIPYA_EMAIL: ""
+      RECIPYA_EMAIL_SMTP_HOST: ""
+      RECIPYA_EMAIL_SMTP_USERNAME: ""
+      RECIPYA_EMAIL_SMTP_PASSWORD: ""
+      RECIPYA_DI_KEY: ""
+      RECIPYA_DI_ENDPOINT: ""
+      RECIPYA_SERVER_AUTOLOGIN: "false"
+      RECIPYA_SERVER_IS_DEMO: "false"
+      RECIPYA_SERVER_IS_PROD: "true"
+      RECIPYA_SERVER_NO_SIGNUPS: "true"  
+      # left as true to not deploy open accidentally. But needs to be turned to 
+      # false after setup to configure accounts. Can be turned off after that.
+      RECIPYA_SERVER_PORT: "8078"
+      RECIPYA_SERVER_URL: "http://0.0.0.0"
+    volumes:
+      - "/data/recipya:/home/recipya/.config/Recipya"
+    networks:
+      - internet
+
+networks:
+  internet:
+    name: "internet"
