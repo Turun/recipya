@@ -50,6 +50,25 @@ templ addRecipe() {
 			<figure>
 				<img
 					class="object-cover w-full h-40 rounded-t-xl"
+					src="/static/img/recipes/new/camera.webp"
+					alt="Writing on a piece of paper with a traditional pen."
+				/>
+			</figure>
+			<div class="card-body">
+				<h2 class="card-title">Scan</h2>
+				<p>Upload the image files or PDF of the recipe you want to add or take a picture using your device's camera.</p>
+				<hr class="dark:border dark:border-gray-800"/>
+				<div class="card-actions">
+					<button class="btn btn-outline btn-sm btn-block" type="button" onclick="add_ocr_dialog.showModal()" disabled>
+						Upload
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="card card-compact shadow-lg rounded-xl h-96 bg-base-100">
+			<figure>
+				<img
+					class="object-cover w-full h-40 rounded-t-xl"
 					src="/static/img/recipes/new/import.webp"
 					alt="Writing on a piece of paper with a traditional pen."
 				/>
@@ -76,25 +95,6 @@ templ addRecipe() {
 						onclick="websites_dialog.showModal()"
 					>
 						Fetch
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card card-compact shadow-lg rounded-xl h-96 bg-base-100">
-			<figure>
-				<img
-					class="object-cover w-full h-40 rounded-t-xl"
-					src="/static/img/recipes/new/camera.webp"
-					alt="Writing on a piece of paper with a traditional pen."
-				/>
-			</figure>
-			<div class="card-body">
-				<h2 class="card-title">Scan</h2>
-				<p>Upload the image files or PDF of the recipe you want to add or take a picture using your device's camera.</p>
-				<hr class="dark:border dark:border-gray-800"/>
-				<div class="card-actions">
-					<button class="btn btn-outline btn-sm btn-block" type="button" onclick="add_ocr_dialog.showModal()">
-						Upload
 					</button>
 				</div>
 			</div>
