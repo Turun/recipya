@@ -68,12 +68,12 @@ templ LoginPage(isDemo, isNoSignups bool) {
 				<h2 class="card-title underline self-center">Log In</h2>
 				<label class="form-control w-full">
 					<div class="label">
-						<span class="label-text font-semibold">Email</span>
+						<span class="label-text font-semibold">Username</span>
 					</div>
 					<input
 						required
-						type="email"
-						placeholder="Enter your email address"
+						type="text"
+						placeholder="Enter your username"
 						class="input input-bordered w-full"
 						name="email"
 						if isDemo {
@@ -126,9 +126,9 @@ templ RegisterPage() {
 				<h2 class="card-title underline self-center">Create your Account</h2>
 				<label class="form-control w-full">
 					<div class="label">
-						<span class="label-text font-semibold">Email</span>
+						<span class="label-text font-semibold">Username</span>
 					</div>
-					<input required type="email" placeholder="Enter your email address" class="input input-bordered w-full" name="email"/>
+					<input required type="text" placeholder="Enter your username" class="input input-bordered w-full" name="email"/>
 				</label>
 				<label class="form-control w-full">
 					<div class="label pt-0">

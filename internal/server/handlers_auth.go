@@ -5,7 +5,6 @@ import (
 	"log/slog"
 	"maps"
 	"net/http"
-	"net/mail"
 	"strconv"
 	"strings"
 	"time"
@@ -261,12 +260,12 @@ func (s *Server) loginPostHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
-		_, err := mail.ParseAddress(email)
-		if err != nil || password == "" {
-			w.Header().Set("HX-Trigger", models.NewErrorFormToast("Credentials are invalid.").Render())
-			w.WriteHeader(http.StatusBadRequest)
-			return
-		}
+		//_, err := mail.ParseAddress(email)
+		//if err != nil || password == "" {
+		//	w.Header().Set("HX-Trigger", models.NewErrorFormToast("Credentials are invalid.").Render())
+		//	w.WriteHeader(http.StatusBadRequest)
+		//	return
+		//}
 
 		userID := s.Repository.VerifyLogin(email, password)
 		if userID == -1 {
@@ -344,12 +343,12 @@ func (s *Server) registerPostHandler() http.HandlerFunc {
 		email := r.FormValue("email")
 		password := r.FormValue("password")
 
-		_, err := mail.ParseAddress(email)
-		if err != nil || password != r.FormValue("password-confirm") {
-			w.Header().Set("HX-Trigger", models.NewErrorFormToast("User might be registered or password invalid.").Render())
-			w.WriteHeader(http.StatusUnprocessableEntity)
-			return
-		}
+		// _, err := mail.ParseAddress(email)
+		//if err != nil || password != r.FormValue("password-confirm") {
+		//	w.Header().Set("HX-Trigger", models.NewErrorFormToast("User might be registered or password invalid.").Render())
+		//	w.WriteHeader(http.StatusUnprocessableEntity)
+		//	return
+		//}
 
 		hashPassword, err := auth.HashPassword(password)
 		if err != nil {

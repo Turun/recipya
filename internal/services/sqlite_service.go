@@ -1377,9 +1377,9 @@ func (s *SQLiteService) RecipeUser(recipeID int64) int64 {
 // Register adds a new user to the store.
 func (s *SQLiteService) Register(email string, hashedPassword auth.HashedPassword) (int64, error) {
 	_, err := mail.ParseAddress(email)
-	if err != nil || hashedPassword == "" {
-		return -1, errors.New("credentials are invalid")
-	}
+	// if err != nil || hashedPassword == "" {
+	// 	return -1, errors.New("credentials are invalid")
+	// }
 
 	s.Mutex.Lock()
 	defer s.Mutex.Unlock()
@@ -2268,9 +2268,9 @@ func (s *SQLiteService) UpdateVideo(video uuid.UUID, durationSecs int) error {
 // UserID gets the user's id from the email. It returns -1 if user not found.
 func (s *SQLiteService) UserID(email string) int64 {
 	_, err := mail.ParseAddress(email)
-	if err != nil {
-		return -1
-	}
+	// if err != nil {
+	// 	return -1
+	// }
 
 	ctx, cancel := context.WithTimeout(context.Background(), shortCtxTimeout)
 	defer cancel()
