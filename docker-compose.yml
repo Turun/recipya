@@ -23,6 +23,8 @@ services:
       RECIPYA_SERVER_URL: "http://0.0.0.0"
     volumes:
       - "/data/recipya:/home/recipya/.config/Recipya"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
     networks:
       - internet
 
